@@ -5,9 +5,11 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
+  Widget build(BuildContext context) {    
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.red,
+      ),
       title: 'Welcome to Flutter',
       home: RandomWords(),
     );
@@ -22,8 +24,7 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Name Generator'), 
-      actions: <Widget>[
+      appBar: AppBar(title: Text('Name Generator'), actions: <Widget>[
         IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
       ]),
       body: _buildSuggestions(),
